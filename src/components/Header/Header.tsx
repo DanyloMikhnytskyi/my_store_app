@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -29,8 +28,7 @@ const components: { title: string; href: string; description?: string }[] = [
     description: "Hats, socks, and more",
   },
 ];
-
-export function HeaderNavigationMenuDemo() {
+export function Header() {
   return (
     <header className="w-full">
       <nav className="container mx-auto px-4">
@@ -99,24 +97,5 @@ export function HeaderNavigationMenuDemo() {
         </NavigationMenu>
       </nav>
     </header>
-  );
-}
-function ListItem({
-  title,
-  children,
-  href,
-  ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
-  return (
-    <li {...props}>
-      <NavigationMenuLink asChild>
-        <Link href={href} className="block">
-          <div className="text-sm leading-none font-medium">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-            {children}
-          </p>
-        </Link>
-      </NavigationMenuLink>
-    </li>
   );
 }
